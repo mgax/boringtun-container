@@ -12,11 +12,11 @@ jobs:
   build-and-push-image:
     strategy:
       matrix:
-        runner: [ubuntu-latest, self-hosted-arm64]
+        runner: [ubuntu-latest, ubuntu-latest-arm64]
         include:
           - runner: ubuntu-latest
             platform: linux/amd64
-          - runner: self-hosted-arm64
+          - runner: ubuntu-latest-arm64
             platform: linux/arm64
     runs-on: ${{ matrix.runner }}
     permissions:
